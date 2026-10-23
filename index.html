@@ -1,90 +1,318 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Equilibrio | Psicología y Bienestar Emocional</title>
+<meta name="description" content="Equilibrio: un espacio educativo dedicado al bienestar emocional, el autocuidado y la salud mental.">
+<title>Equilibrio | Bienestar emocional</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#faf8f2;color:#34483e;line-height:1.6}
-header{background:#dce7dc;padding:22px 16px;text-align:center}
-h1{font-size:28px;margin:0;color:#315746}
-header p{margin:6px 0}
-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;padding:14px;background:#fff}
-nav a{color:#315746;text-decoration:none;font-weight:bold}
-.hero{padding:55px 22px;text-align:center;background:linear-gradient(135deg,#edf2e9,#f7e8d8)}
-.hero h2{font-size:30px;line-height:1.2}
-.hero p{max-width:600px;margin:16px auto}
-section{padding:35px 20px;max-width:900px;margin:auto}
-h2{color:#426b58}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
-.card{background:white;padding:20px;border-radius:14px;box-shadow:0 3px 12px #0000000c}
-button{background:#426b58;color:white;border:0;border-radius:8px;padding:12px 18px;font-size:16px}
-input,textarea{width:100%;padding:12px;margin:7px 0 14px;border:1px solid #c6d2c8;border-radius:8px;font-size:16px}
-footer{background:#dce7dc;text-align:center;padding:24px;font-size:14px}
-.note{background:#f4e7d8;padding:15px;border-radius:10px}
+:root {
+  --verde: #536d5b;
+  --verde-oscuro: #344c3d;
+  --menta: #e5ece3;
+  --crema: #faf7f0;
+  --beige: #eee3d4;
+  --texto: #3b443d;
+  --blanco: #ffffff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--crema);
+  color: var(--texto);
+  line-height: 1.7;
+}
+img { max-width: 100%; display: block; }
+header {
+  padding: 18px 6%;
+  background: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.logo { color: var(--verde-oscuro); }
+.logo strong { font-size: 25px; letter-spacing: 1px; }
+.logo span { display: block; font-size: 12px; }
+nav { display: flex; gap: 17px; flex-wrap: wrap; }
+nav a {
+  color: var(--verde-oscuro);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+nav a:hover { text-decoration: underline; }
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 35px;
+  padding: 48px 7%;
+  background: var(--menta);
+}
+.hero h1 {
+  color: var(--verde-oscuro);
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.15;
+  margin: 10px 0 18px;
+}
+.hero p { font-size: 17px; }
+.hero img {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  border-radius: 45% 45% 16px 16px;
+}
+.eyebrow {
+  color: var(--verde);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 21px;
+  background: var(--verde);
+  color: white;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.btn:hover { background: var(--verde-oscuro); }
+section { padding: 55px 7%; }
+.section-title { text-align: center; margin: 0 auto 30px; max-width: 680px; }
+h2 { color: var(--verde-oscuro); font-size: 30px; line-height: 1.25; }
+.intro {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 35px;
+  align-items: center;
+}
+.intro img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+.soft { background: var(--beige); }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--blanco);
+  border-radius: 13px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px #354a3810;
+}
+.card img { width: 100%; height: 190px; object-fit: cover; }
+.card-content { padding: 20px; }
+.card h3 { color: var(--verde-oscuro); margin-top: 0; }
+.habits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.habit {
+  background: var(--blanco);
+  padding: 22px;
+  border-radius: 12px;
+  border-top: 4px solid var(--verde);
+}
+.habit .symbol { font-size: 28px; }
+.quote {
+  text-align: center;
+  background: var(--verde-oscuro);
+  color: white;
+  padding: 40px 8%;
+}
+.quote h2 { color: white; }
+.contact {
+  max-width: 720px;
+  margin: auto;
+}
+form {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+}
+label { display: block; font-weight: bold; margin-top: 12px; }
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid #c8d2c8;
+  border-radius: 7px;
+  font: inherit;
+}
+textarea { resize: vertical; }
+button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+.notice { font-size: 13px; color: #626b63; }
+footer {
+  text-align: center;
+  background: var(--menta);
+  padding: 25px 7%;
+  font-size: 13px;
+}
+footer strong { color: var(--verde-oscuro); }
+@media(max-width:700px) {
+  header { justify-content: center; text-align: center; }
+  nav { justify-content: center; gap: 12px; }
+  .hero, .intro { grid-template-columns: 1fr; }
+  .hero { padding: 35px 6%; }
+  .hero img { height: 270px; }
+  section { padding: 38px 6%; }
+  .cards, .habits { grid-template-columns: 1fr; }
+  h2 { font-size: 26px; }
+}
 </style>
 </head>
 <body>
+
 <header>
-<h1>Equilibrio</h1>
-<p>Psicología y Bienestar Emocional</p>
+  <div class="logo">
+    <strong>Equilibrio</strong>
+    <span>Psicología y bienestar emocional</span>
+  </div>
+  <nav aria-label="Menú principal">
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotros">Quiénes somos</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#bienestar">Bienestar</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 </header>
-<nav>
-<a href="#inicio">Inicio</a>
-<a href="#nosotros">Nosotros</a>
-<a href="#servicios">Servicios</a>
-<a href="#bienestar">Bienestar</a>
-<a href="#contacto">Contacto</a>
-</nav>
+
 <main>
-<div class="hero" id="inicio">
-<h2>Un espacio para cuidar de ti</h2>
-<p>Tu bienestar emocional importa. Conocerte, comprender tus emociones y aprender nuevas herramientas puede ayudarte a vivir con mayor equilibrio.</p>
-<a href="#servicios"><button>Conoce nuestros servicios</button></a>
-</div>
-<section id="nosotros">
-<h2>¿Quiénes somos?</h2>
-<p>Equilibrio es una propuesta académica ficticia de consultoría en psicología y bienestar emocional. Su propósito es promover la educación emocional, el autocuidado y la importancia de buscar apoyo profesional cuando sea necesario.</p>
-<p>Creemos que escuchar, aprender y desarrollar hábitos saludables son pasos importantes para el bienestar personal.</p>
-</section>
-<section id="servicios">
-<h2>Nuestros servicios</h2>
-<div class="cards">
-<div class="card"><h3>🌱 Educación emocional</h3><p>Información para identificar y comprender las emociones cotidianas.</p></div>
-<div class="card"><h3>💬 Orientación personal</h3><p>Información general sobre la importancia de establecer metas y hábitos de autocuidado.</p></div>
-<div class="card"><h3>🧘 Manejo del estrés</h3><p>Recursos educativos sobre respiración, pausas y organización diaria.</p></div>
-</div>
-</section>
-<section id="bienestar">
-<h2>Pequeños hábitos, grandes cambios</h2>
-<div class="cards">
-<div class="card"><h3>Respira</h3><p>Haz una pausa y respira lentamente durante unos minutos.</p></div>
-<div class="card"><h3>Descansa</h3><p>Procura mantener una rutina de sueño y descanso.</p></div>
-<div class="card"><h3>Conecta</h3><p>Comparte cómo te sientes con alguien de confianza.</p></div>
-</div>
-<p class="note">Recuerda: estos consejos son educativos y no sustituyen la atención de un profesional de salud mental.</p>
-</section>
-<section id="contacto">
-<h2>Contáctanos</h2>
-<p>Este formulario es una demostración académica y no envía ni guarda mensajes.</p>
-<form onsubmit="event.preventDefault();alert('¡Gracias por visitar Equilibrio! Este formulario es solo una demostración académica.');">
-<label for="nombre">Nombre</label>
-<input id="nombre" type="text" placeholder="Escribe tu nombre" required>
-<label for="correo">Correo electrónico</label>
-<input id="correo" type="email" placeholder="tunombre@ejemplo.com" required>
-<label for="mensaje">¿Cómo podemos ayudarte?</label>
-<textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje"></textarea>
-<button type="submit">Enviar mensaje</button>
-</form>
-</section>
+  <section class="hero" id="inicio">
+    <div>
+      <span class="eyebrow">Un espacio para ti</span>
+      <h1>Tu bienestar emocional también importa</h1>
+      <p>Aprender a reconocer lo que sentimos es un paso importante para conocernos mejor. Aquí encontrarás ideas y recursos para dedicarte tiempo, cuidar de ti y valorar tu salud emocional.</p>
+      <a class="btn" href="#bienestar">Descubre cómo cuidarte</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1000&q=85" alt="Persona disfrutando de un momento de tranquilidad en la naturaleza">
+  </section>
+
+  <section id="nosotros">
+    <div class="intro">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85" alt="Persona trabajando y aprendiendo en un ambiente tranquilo">
+      <div>
+        <span class="eyebrow">Nuestra esencia</span>
+        <h2>¿Quiénes somos?</h2>
+        <p>Equilibrio nace como una propuesta educativa para acercar la psicología y el bienestar emocional a la vida cotidiana.</p>
+        <p>La idea es compartir información clara y sencilla que nos recuerde la importancia de reconocer nuestras emociones, practicar el autocuidado y buscar ayuda profesional cuando la necesitamos.</p>
+        <p>Creemos que pequeños cambios en nuestros hábitos pueden ayudarnos a prestar más atención a cómo nos sentimos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="servicios">
+    <div class="section-title">
+      <span class="eyebrow">Lo que encontrarás</span>
+      <h2>Aprender para sentirnos mejor</h2>
+      <p>Recursos educativos para comprender distintos aspectos del bienestar emocional.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=800&q=85" alt="Momento de relajación y tranquilidad">
+        <div class="card-content">
+          <h3>Educación emocional</h3>
+          <p>Aprender a reconocer las emociones, ponerles nombre y comprender cómo influyen en nuestra vida diaria.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=85" alt="Persona practicando meditación">
+        <div class="card-content">
+          <h3>Manejo del estrés</h3>
+          <p>Conocer prácticas sencillas de respiración, organización del tiempo y pausas conscientes.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=85" alt="Personas compartiendo tiempo juntas">
+        <div class="card-content">
+          <h3>Relaciones saludables</h3>
+          <p>Reflexionar sobre la comunicación respetuosa, los límites personales y el apoyo de quienes nos rodean.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="bienestar">
+    <div class="section-title">
+      <span class="eyebrow">Dedícate un momento</span>
+      <h2>Pequeños hábitos para el día a día</h2>
+      <p>No se trata de hacerlo todo perfecto, sino de empezar con acciones pequeñas y realistas.</p>
+    </div>
+    <div class="habits">
+      <article class="habit">
+        <div class="symbol">🌿</div>
+        <h3>Haz una pausa</h3>
+        <p>Regálate unos minutos para respirar con calma y observar cómo te sientes.</p>
+      </article>
+      <article class="habit">
+        <div class="symbol">☀️</div>
+        <h3>Cuida tu rutina</h3>
+        <p>Procura descansar, alimentarte de forma equilibrada y reservar tiempo para ti.</p>
+      </article>
+      <article class="habit">
+        <div class="symbol">💚</div>
+        <h3>Busca conexión</h3>
+        <p>Hablar con una persona de confianza puede ayudarte a sentirte acompañada.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="quote">
+    <h2>Escucharte también es cuidarte</h2>
+    <p>Tu bienestar merece atención, paciencia y respeto.</p>
+  </div>
+
+  <section id="contacto">
+    <div class="contact">
+      <div class="section-title">
+        <span class="eyebrow">Ponte en contacto</span>
+        <h2>Nos gustaría leerte</h2>
+        <p>Este formulario sirve como demostración de cómo podría verse una sección de contacto en el sitio.</p>
+      </div>
+      <form id="contactForm">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Escribe tu nombre" required>
+        <label for="correo">Correo electrónico</label>
+        <input id="correo" name="correo" type="email" placeholder="tunombre@ejemplo.com" required>
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje"></textarea>
+        <button class="btn" type="submit">Enviar mensaje</button>
+        <p class="notice">Formulario demostrativo: los datos no se envían ni se almacenan.</p>
+        <p id="respuesta" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
 </main>
+
 <footer>
-<p><strong>Equilibrio | Psicología y Bienestar Emocional</strong></p>
-<p>Proyecto académico desarrollado con apoyo de inteligencia artificial.</p>
-<p>Sitio ficticio: no ofrece servicios clínicos reales.</p>
-<p>© 2026</p>
+  <p><strong>Equilibrio | Psicología y bienestar emocional</strong></p>
+  <p>Proyecto académico de educación y bienestar emocional · 2026</p>
+  <p>Esta página es una propuesta ficticia con fines educativos. No ofrece atención psicológica real ni sustituye la orientación de un profesional.</p>
 </footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  document.getElementById("respuesta").textContent =
+    "Gracias por probar el formulario. Esta es una demostración y tu mensaje no se ha enviado.";
+});
+</script>
 </body>
-                                                          </html>
-                                                          
+</html>
